@@ -1,3 +1,8 @@
+require 'rubygems' # not necessary with ruby 1.9 but included for completeness
+require 'twilio-ruby'
+
+
+
 def greetPerson(name)
 	if name == "Jim"
 		return "Hello #{name}"
@@ -23,6 +28,23 @@ def wishHappyBirthday(birthdays)
 		end
 	end
 	# What's wrong with this?
+end
+
+def sendText(to, from, message)
+
+	# put your own credentials here
+	account_sid = 'ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+	auth_token = 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+
+	# set up a client to talk to the Twilio REST API
+	@client = Twilio::REST::Client.new account_sid, auth_token
+
+	@client.account.messages.create(
+	  :from => from,
+	  :to => to,
+	  :body => message
+	)
+
 end
 
 puts "What's your name?"
