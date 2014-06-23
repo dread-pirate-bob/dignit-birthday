@@ -1,4 +1,5 @@
-name = "Jim"
+puts "What's your name?"
+name = gets.strip!
 
 if name == "Jim"
 	puts "Hello #{name}"
