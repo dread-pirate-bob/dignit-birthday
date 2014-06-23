@@ -11,3 +11,8 @@ def greetPerson (name)
 		return "Hello #{name}, it's nice to meet you!"
 	end
 end
+
+puts "How old are you?"
+age = gets.to_i
+puts "Happy #{age}th Birthday!"
+
