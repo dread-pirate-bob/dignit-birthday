@@ -1,1 +1,2 @@
-#RUBY
+name = "Jim"
+puts "Hello #{name}"
