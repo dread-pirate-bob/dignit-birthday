@@ -14,20 +14,17 @@ def greetPerson(name)
 end
 
 def wishHappyBirthday(birthdays)
-	for years in 0..birthdays
-		if years == 0
-			puts "You were born!"
-		elsif years == 1
-			puts "Happy #{years}st Birthday!"
-		elsif years == 2
-			puts "Happy #{years}nd Birthday!"
-		elsif years == 3
-			puts "Happy #{years}rd Birthday!"
-		else
-			puts "Happy #{years}th Birthday!"
-		end
+	if years == 0
+		return "You were born!"
+	elsif years == 1
+		return "Happy #{years}st Birthday!"
+	elsif years == 2
+		return "Happy #{years}nd Birthday!"
+	elsif years == 3
+		return "Happy #{years}rd Birthday!"
+	else
+		return "Happy #{years}th Birthday!"
 	end
-	# What's wrong with this?
 end
 
 def sendText(to, from, message)
