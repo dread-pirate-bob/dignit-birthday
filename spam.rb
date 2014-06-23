@@ -13,38 +13,38 @@ def greetPerson(name)
 	end
 end
 
-def wishHappyBirthday(birthdays)
-	if years == 0
+def wishHappyBirthday(age)
+	if age == 0
 		return "You were born!"
-	elsif years == 1
-		return "Happy #{years}st Birthday!"
-	elsif years == 2
-		return "Happy #{years}nd Birthday!"
-	elsif years == 3
-		return "Happy #{years}rd Birthday!"
+	elsif age == 1
+		return "Happy #{age}st Birthday!"
+	elsif age == 2
+		return "Happy #{age}nd Birthday!"
+	elsif age == 3
+		return "Happy #{age}rd Birthday!"
 	else
-		return "Happy #{years}th Birthday!"
+		return "Happy #{age}th Birthday!"
 	end
 end
 
-def sendText(to, from, message)
+def sendText(to, message)
 
 	# put your own credentials here
-	account_sid = 'ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-	auth_token = 'yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy'
+	account_sid = ''
+	auth_token = ''
 
 	# set up a client to talk to the Twilio REST API
 	@client = Twilio::REST::Client.new account_sid, auth_token
 
 	@client.account.messages.create(
-	  :from => from,
+	  :from => "+1",
 	  :to => to,
 	  :body => message
 	)
 
 end
 
-puts "What's your name?"
+puts "What's your friend's name?"
 name = gets.strip!
 puts greetPerson(name)
 
@@ -52,5 +52,9 @@ puts greetPerson(name)
 puts "How old are you?"
 age = gets.to_i
 puts "Happy #{age}th Birthday!"
-wishHappyBirthday(age)
+
+puts "What's your friend's phone number?"
+phoneNumber = "+1#{gets.to_i}"
+
+sendText(phoneNumber, wishHappyBirthday(age))
 
