@@ -8,3 +8,7 @@ A simple ruby example
 ```
 ruby spam.rb
 ```
+
+##Contributors
+- Thys
+- nicholas

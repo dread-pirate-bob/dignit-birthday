@@ -44,17 +44,23 @@ def sendText(to, message)
 
 end
 
-puts "What's your friend's name?"
-name = gets.strip!
-puts greetPerson(name)
+puts "how many friends do you have, and how many do they have, and add those two numbers together?"
+numberOfFriends = gets.to_i
+
+numberOfFriends.times do |i|
+
+	puts "What's your friend's name?"
+	name = gets.strip!
+	puts greetPerson(name)
 
 
-puts "How old are you?"
-age = gets.to_i
-puts "Happy #{age}th Birthday!"
+	puts "How old are you?"
+	age = gets.to_i
+	puts "Happy #{age}th Birthday!"
 
-puts "What's your friend's phone number?"
-phoneNumber = "+1#{gets.to_i}"
+	puts "What's your friend's phone number?"
+	phoneNumber = "+1#{gets.to_i}"
 
-sendText(phoneNumber, wishHappyBirthday(age))
+	sendText(phoneNumber, wishHappyBirthday(age))
 
+end
