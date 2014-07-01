@@ -11,4 +11,4 @@ ruby spam.rb
 
 ##Contributors
 - Thys
-- nick
+- nicholas
