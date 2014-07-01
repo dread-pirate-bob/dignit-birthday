@@ -44,7 +44,8 @@ def sendText(to, message)
 
 end
 
-numberOfFriends = 5
+puts "how many friends?"
+numberOfFriends = gets.to_i
 
 numberOfFriends.times do |i|
 
